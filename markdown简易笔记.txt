@@ -1,0 +1,199 @@
+---下面的什么标题，什么换行都是在为了显示时更美观
+
+一.标题
+标题：（#与内容间空一格）
+# Heading Level 1
+## Heading Level 2  
+### Heading Level 3
+#### Heading Level 4
+##### Heading Level 5
+###### Heading Level 6
+
+标题（但是会在标题下加横线）：
+Heading Level 1
+===============
+Heading Level 2
+---------------
+
+标题ID：没有学
+
+
+二.段落与换行
+
+内容（没有任何标记的）空一行就是显示空一行，而且不能开头空两格
+连续的两行则换行符转换为空格
+
+换行：
+（1）句子末尾空两个，再换行一次。   //直接换行在显示时不换行的，在编写倒是有
+（2）在句子后面加个<br>
+
+三.强调
+
+斜体：（ *或 _ 与内容间不空格）
+*italic text*
+_italic text_
+
+加粗：
+**bold text**
+__bold text__
+
+粗体斜体：
+***bold italic text***
+___bold italic text___
+**_bold italic text_**
+*__bold italic text__*
+
+划线
+~~strikethrough text~~
+
+下划线
+<u>underlined text</u>
+
+亮点
+<mark>highlighted text</mark>  (HTML tag)
+==highlighted text==              //小部分的处理器支持
+
+
+四.引用块
+
+> text
+
+//换行跟 二.的方法一致
+//不同的是空一行变成换行
+
+>text1
+>text2
+>text3
+和
+>text1
+text2
+text3
+显示都是text1 text2 text3
+
+//结束引用块的话要空一行
+
+嵌套使用
+>这是第一层
+>>这是第二层
+>>>这是第三层
+>回到第一层，这几层都会自动换行
+
+
+五.列表
+- Item 1
+- Item 2
+- Item 3
+
+* Item 1
+* Item 2
+* Item 3
+
++ Item 1
++ Item 2
++ Item 3
+
+//下面这样是不行的
+- Item A
+* Item B
++ Item C
+
+有序列表
+使用数字加上句号来创建有序列表：
+1.
+2.
+5.  //不连续自动转换成连续1.2.3.   //连续但不是1则以第一个数字为起始再连续下去
+
+基本嵌套
+使用缩进（2-4格）来创建嵌套列表：
+- Level 1 item 1
+  - Level 2 item 1.1
+  - Level 2 item 1.2
+//其实就是缩进（2-4格）就是进入列表内，然后其他操作就跟在全局一致
+
+
+六.代码
+
+ `inline code`
+
+``Use `console.log()` function``   //这样可以使 ` `转为普通标识符
+
+代码块展示
+```			//另外，在三个 ` 指定语言名称以启用语法高亮
+ <!-- 代码 -->
+```
+
+
+七.链接语法（超链接）
+
+[link text](URL)
+
+在悬停时显示的URL后添加标题：
+[link text](URL "This is the link title")
+
+将链接定义与使用分开：
+This is a [reference link][1].
+This is another [reference link][link-name].
+										//这里必须空一行
+[1]: https://www.example.com
+[link-name]: https://www.google.com "Google Search"
+
+链接文本本身被用作标签：
+See projects on [GitHub][].
+
+[GitHub]: https://github.com
+
+自动链接：
+<https://www.example.com>
+
+ <user@example.com>
+
+内部链接：
+锚点链接
+Jump to [come back Heading Level 1](#Heading Level 1)
+相对路径链路
+See [Heading Syntax](headings.md)
+Back to [Home](../index.md)
+
+特殊链接:
+用链接包裹图片：
+[![Alt Text](image.png)](https://www.example.com)
+文件下载链接：
+Download [User Manual](files/manual.pdf)
+Get [Sample Code](examples/demo.zip)
+
+//此外强调和换行仍可用在[ ]的里面的显示文本内容
+
+
+八.图片
+内嵌图片：
+![alt text](image URL)		//image URL为相对路径或绝对路径
+将鼠标悬停在图片上时，标题文字会显示出来:
+![alt text](image URL "Logo title")
+
+基本参考风格
+![alt text][image-ref]
+																//必须空一行
+[image-ref]: https://www.markdownlang.com/image.jpg "Optional Title"
+当参考标签与替代文本相同时：
+![Markdown Logo][]
+
+[Markdown Logo]: https://www.markdownlang.com/markdown-logo.png
+
+
+
+九.反斜杠
+
+\标识符                           //取消掉标识符的作用
+
+
+
+
+
+
+
+
+
+
+
+
+
