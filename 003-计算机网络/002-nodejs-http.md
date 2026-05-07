@@ -119,3 +119,38 @@ res.writeHead(200, {
 ```
 
 ---
+
+出现的bug的解决
+
+1. 一个函数只能有一个res.writeHead()和res.end()，若是文件要两次，则记得提前return
+
+```js
+const mimeTypes = {
+  ".html": "text/html",
+  ".css": "text/css",
+  ".js": "application/javascript",
+  ".json": "application/json",
+};
+if (url === "/") {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end(fs.readFileSync("./dist/index.html"));
+  return; //记得res.end后面要结束函数，不然就向下执行了
+}
+
+console.log(url);
+const ext = path.extname(url);
+
+const contentType = mimeTypes[ext] || "application/octet-stream";
+console.log(contentType);
+res.writeHead(200, { "Content-Type": contentType });
+
+res.end(fs.readFileSync("./dist" + url));
+```
+
+2. //记得小心端口占用问题，一个端口只有一个服务
+   会报错为'ERR_HTTP_HEADERS_SENT'
+
+3. 浏览器会默认请求一个favicon.ico，作为网页的图标，记得提前存放，
+   不然报错no such file or directory, open 'D:\product\boke\dist\favicon.ico'
+
+4. 浏览器的localStorage是根据url和端口的

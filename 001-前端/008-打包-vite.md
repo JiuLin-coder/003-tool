@@ -22,7 +22,7 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
-  base: "./", // 关键！改为相对路径，把所有存在的路径 从绝对路径改成相当路径。（这样子可以直接html打开）
+  base: "./", // 关键！改为相对路径，这里影响着打包后的文件的url地址，具体修改与你怎么通过前端url网络请求后拿到url再进行查找后端对应文件。
   build: {
     outDir: "dist",
     assetsDir: "assets",
